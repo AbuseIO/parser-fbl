@@ -20,8 +20,6 @@ class Fbl extends Parser
     public function __construct($parsedMail, $arfMail)
     {
         parent::__construct($parsedMail, $arfMail, $this);
-
-        //echo $parsedMail->getHeaders();
     }
 
     /**
@@ -38,7 +36,6 @@ class Fbl extends Parser
             // to the report, so its origin is clearly shown.
             $source = $this->parsedMail->getHeader('from');
             foreach (config("{$this->configBase}.parser.aliases") as $from => $alias) {
-                echo $from . PHP_EOL;
                 if (preg_match($from, $source)) {
                     $source = $alias;
                 }
