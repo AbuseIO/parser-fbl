@@ -1,0 +1,33 @@
+{
+    "name": "abuseio/parser-fbl",
+    "description": "Parser addon for handling notifications from feedback loops (fbl)",
+    "version": "1.0.0",
+    "keywords": ["laravel", "abuseio", "parser", "fbl"],
+    "homepage": "http://abuse.io",
+    "type": "library",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "AbuseIO Foundation",
+            "email": "dev@abuse.io",
+            "homepage": "http://abuse.io",
+            "role": "Lead"
+        }
+    ],
+    "support": {
+        "email": "dev@abuse.io",
+        "issues": "https://github.com/AbuseIO/AbuseIO/issues",
+        "irc": "irc://irc.freenode.net/abuseio",
+        "source": "https://github.com/AbuseIO/parser-fbl",
+        "docs": "https://abuse.io/resources/documentation/"
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "abuseio/parser-common": "1.1.* || dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "AbuseIO\\Parser\\Fbl\\": "src/"
+        }
+    }
+}
