@@ -2,6 +2,7 @@
 
 namespace AbuseIO\Parsers;
 
+use PhpMimeMailParser\Parser as MimeParser;
 use AbuseIO\Models\Incident;
 
 /**
@@ -19,6 +20,8 @@ class Fbl extends Parser
     public function __construct($parsedMail, $arfMail)
     {
         parent::__construct($parsedMail, $arfMail, $this);
+
+        //echo $parsedMail->getHeaders();
     }
 
     /**
@@ -30,6 +33,16 @@ class Fbl extends Parser
     {
         if ($this->arfMail !== true) {
             $this->feedName = 'default';
+
+            // As this is a generic FBL parser we need to see which was the source and add the name
+            // to the report, so its origin is clearly shown.
+            $source = $this->parsedMail->getHeader('from');
+            foreach (config("{$this->configBase}.parser.aliases") as $from => $alias) {
+                echo $from . PHP_EOL;
+                if (preg_match($from, $source)) {
+                    $source = $alias;
+                }
+            }
 
             // If feed is known and enabled, validate data and save report
             if ($this->isKnownFeed() && $this->isEnabledFeed()) {
@@ -45,6 +58,14 @@ class Fbl extends Parser
 
                 $report = array_combine($matches[1], $matches[2]);
 
+                // Now parse the headers from the spam messages and add it to the report
+                $spamMessage = new MimeParser();
+                $spamMessage->setText($this->arfMail['evidence']);
+                $report['headers'] = $spamMessage->getHeaders();
+
+                // Also add the spam message body to the report
+                $report['body'] = $spamMessage->getMessageBody();
+
                 // Sanity check
                 if ($this->hasRequiredFields($report) === true) {
 
@@ -52,14 +73,14 @@ class Fbl extends Parser
                     $report = $this->applyFilters($report);
 
                     $incident = new Incident();
-                    $incident->source      = config("{$this->configBase}.parser.name"); // FeedName
+                    $incident->source      = $source; // FeedName
                     $incident->source_id   = false;
                     $incident->ip          = $report['Source-IP'];
-                    $incident->domain      = !empty($report['Source-Domain']) ? $report['Source-Domain'] : false;
+                    $incident->domain      = false;
                     $incident->uri         = false;
                     $incident->class       = config("{$this->configBase}.feeds.{$this->feedName}.class");
                     $incident->type        = config("{$this->configBase}.feeds.{$this->feedName}.type");
-                    $incident->timestamp   = strtotime($report['Arrival-Date']);
+                    $incident->timestamp   = strtotime($report['Received-Date']);
                     $incident->information = json_encode($report);
 
                     $this->incidents[] = $incident;
