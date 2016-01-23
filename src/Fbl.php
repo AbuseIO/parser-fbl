@@ -55,6 +55,13 @@ class Fbl extends Parser
 
                 $report = array_combine($matches[1], $matches[2]);
 
+                if (empty($report['Received-Date'])) {
+                    if (!empty($report['Arrival-Date'])) {
+                        $report['Received-Date'] = $report['Arrival-Date'];
+                        unset($report['Arrival-Date']);
+                    }
+                }
+
                 // Now parse the headers from the spam messages and add it to the report
                 $spamMessage = new MimeParser();
                 $spamMessage->setText($this->arfMail['evidence']);

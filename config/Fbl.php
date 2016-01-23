@@ -23,6 +23,7 @@ return [
             '/feedbackloop@fbl.synacor.com/',
             '/feedbackloop@fbl.usa.net/',
             '/feedbackloop@fbl.zoho.com/',
+            '/feedback@arf.mail.yahoo.com/',
         ],
         'body_map'      => [
             //
@@ -40,6 +41,7 @@ return [
             '/feedbackloop@fbl.synacor.com/'                => 'Synacor',
             '/feedbackloop@fbl.usa.net/'                    => 'USANET',
             '/feedbackloop@fbl.zoho.com/'                   => 'ZOHO',
+            '/feedback@arf.mail.yahoo.com/'                 => 'Yahoo',
         ]
     ],
 
