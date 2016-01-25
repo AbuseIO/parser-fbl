@@ -48,7 +48,7 @@ return [
     'feeds' => [
         'default' => [
             'class'     => 'FEEDBACK_LOOP',
-            'type'      => 'Info',
+            'type'      => 'INFO',
             'enabled'   => true,
             'fields'    => [
                 'Received-Date',
