@@ -33,7 +33,7 @@ return [
             '/scomp@aol.net/'                               => 'AOL',
             '/feedbackloop@feedback.bluetie.com/'           => 'BlueTie',
             '/feedbackloop@comcastfbl.senderscore.net/'     => 'Comcast',
-            '/feedbackloop@fbl.cox.net/'                    => 'CIX',
+            '/feedbackloop@fbl.cox.net/'                    => 'COX',
             '/feedbackloop@fbl.fastmail.com/'               => 'FastMail',
             '/feedbackloop@fbl.hostedemail.com/'            => 'OpenSRS',
             '/feedbackloop@fbl.apps.rackspace.com/'         => 'Rackspace',
