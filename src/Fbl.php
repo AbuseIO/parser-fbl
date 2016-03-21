@@ -37,7 +37,13 @@ class Fbl extends Parser
             $source = $this->parsedMail->getHeader('from');
             foreach (config("{$this->configBase}.parser.aliases") as $from => $alias) {
                 if (preg_match($from, $source)) {
+                    // If there is an alias, prefer that name instead of the from address
                     $source = $alias;
+
+                    // If there is an more specific feed configuration prefer that config over the default
+                    if (!empty(config("{$this->configBase}.feeds.{$source}"))) {
+                        $this->feedName = $source;
+                    }
                 }
             }
 
