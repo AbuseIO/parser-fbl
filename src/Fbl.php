@@ -69,9 +69,15 @@ class Fbl extends Parser
                 }
 
                 // Now parse the headers from the spam messages and add it to the report
-                $spamMessage = new MimeParser();
-                $spamMessage->setText($this->arfMail['evidence']);
-                $report['headers'] = $spamMessage->getHeaders();
+                if (!empty($this->arfMail['evidence'])) {
+                    $spamMessage = new MimeParser();
+                    $spamMessage->setText($this->arfMail['evidence']);
+                    $report['headers'] = $spamMessage->getHeaders();
+                } else {
+                    $this->failed(
+                        'The e-mail received at the parser is not RFC822 compliant, and therefor not a FBL message'
+                    );
+                }
 
                 // Also add the spam message body to the report
                 $report['body'] = $spamMessage->getMessageBody();
