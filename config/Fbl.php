@@ -24,6 +24,10 @@ return [
             '/feedbackloop@fbl.usa.net/',
             '/feedbackloop@fbl.zoho.com/',
             '/feedback@arf.mail.yahoo.com/',
+            '/feedbackloop@feedback.terra.com/',
+            '/feedbackloop@fbl.italiaonline.net/',
+            '/feedbackloop@mailru.senderscore.net/',
+            '/feedbackloop@yandexfbl.senderscore.net/',
         ],
         'body_map'      => [
             //
@@ -42,6 +46,10 @@ return [
             '/feedbackloop@fbl.usa.net/'                    => 'USANET',
             '/feedbackloop@fbl.zoho.com/'                   => 'ZOHO',
             '/feedback@arf.mail.yahoo.com/'                 => 'Yahoo',
+            '/feedbackloop@feedback.terra.com/'             => 'Terra',
+            '/feedbackloop@fbl.italiaonline.net/'           => 'Italia Online Libero',
+            '/feedbackloop@mailru.senderscore.net/'         => 'Mail RU',
+            '/feedbackloop@yandexfbl.senderscore.net/'      => 'Yandex',
         ]
     ],
 
