@@ -20,6 +20,7 @@ return [
             '/feedbackloop@fbl.hostedemail.com/',
             '/feedbackloop@fbl-opensrs.app.returnpath.net/',
             '/feedbackloop@fbl.apps.rackspace.com/',
+            '/feedbackloop@feedback.apps.rackspace.com/',
             '/feedbackloop@feedback.postmaster.rr.com/',
             '/feedbackloop@fbl.synacor.com/',
             '/feedbackloop@fbl.usa.net/',
@@ -29,6 +30,7 @@ return [
             '/feedbackloop@fbl.italiaonline.net/',
             '/feedbackloop@mailru.senderscore.net/',
             '/feedbackloop@yandexfbl.senderscore.net/',
+            '/feedbackloop@fbl-bluetie.app.returnpath.net/',
         ],
         'body_map'      => [
             //
@@ -43,6 +45,7 @@ return [
             '/feedbackloop@fbl.hostedemail.com/'            => 'OpenSRS',
             '/feedbackloop@fbl-opensrs.app.returnpath.net/' => 'OpenSRS',
             '/feedbackloop@fbl.apps.rackspace.com/'         => 'Rackspace',
+            '/feedbackloop@feedback.apps.rackspace.com/'    => 'Rackspace',
             '/feedbackloop@feedback.postmaster.rr.com/'     => 'Time Warner Cable',
             '/feedbackloop@fbl.synacor.com/'                => 'Synacor',
             '/feedbackloop@fbl.usa.net/'                    => 'USANET',
@@ -52,6 +55,7 @@ return [
             '/feedbackloop@fbl.italiaonline.net/'           => 'Italia Online Libero',
             '/feedbackloop@mailru.senderscore.net/'         => 'Mail RU',
             '/feedbackloop@yandexfbl.senderscore.net/'      => 'Yandex',
+            '/feedbackloop@fbl-bluetie.app.returnpath.net/' => 'Bluetie',
         ]
     ],
 
