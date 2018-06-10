@@ -41,7 +41,7 @@ return [
             '/feedbackloop@fbl.cox.net/'                    => 'COX',
             '/feedbackloop@fbl.fastmail.com/'               => 'FastMail',
             '/feedbackloop@fbl.hostedemail.com/'            => 'OpenSRS',
-            '/feedbackloop@fbl-opensrs.app.returnpath.net/  => 'OpenSRS',
+            '/feedbackloop@fbl-opensrs.app.returnpath.net/' => 'OpenSRS',
             '/feedbackloop@fbl.apps.rackspace.com/'         => 'Rackspace',
             '/feedbackloop@feedback.postmaster.rr.com/'     => 'Time Warner Cable',
             '/feedbackloop@fbl.synacor.com/'                => 'Synacor',
