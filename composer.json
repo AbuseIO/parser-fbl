@@ -1,7 +1,7 @@
 {
     "name": "abuseio/parser-fbl",
-    "description": "Parser addon for handling notifications from feedback loops (fbl)",
-    "version": "2.1.1",
+    "description": "Parser add-on for handling notifications from feedback loops (fbl)",
+    "version": "2.1.2",
     "keywords": ["laravel", "abuseio", "parser", "fbl"],
     "homepage": "http://abuse.io",
     "type": "library",
