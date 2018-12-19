@@ -80,7 +80,11 @@ class Fbl extends Parser
                 }
 
                 // Also add the spam message body to the report
-                $report['body'] = $spamMessage->getMessageBody();
+                $report['body'] = '';
+                if ($spamMessage && $spamMessage->getMessageBody()) {                                  
+                    $report['body'] = $spamMessage->getMessageBody();
+                }
+                    
 
                 // Sanity check
                 if ($this->hasRequiredFields($report) === true) {
