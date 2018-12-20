@@ -74,7 +74,7 @@ class Fbl extends Parser
                     $spamMessage->setText($this->arfMail['evidence']);
                     $report['headers'] = $spamMessage->getHeaders();
                 } else {
-                    $this->failed(
+                    return $this->failed(
                         'The e-mail received at the parser is not RFC822 compliant, and therefor not a FBL message'
                     );
                 }
