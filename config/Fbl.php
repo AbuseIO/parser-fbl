@@ -11,7 +11,13 @@ return [
         'name'          => 'Fbl',
         'enabled'       => true,
         'report_file'   => false,
-        'sender_map'    => [
+	'sender_map'    => [
+            'feedbackloop@feedback.bluetie.com',
+	    'feedbackloop@fbl.cox.net',
+            'feedbackloop@fbl.apps.rackspace.com',
+            'feedbackloop@fbl.synacor.com',
+	    'feedbackloop@fbl.usa.net',
+
             '/feedbackloop@bluetiefbl.senderscore.net/',
             '/feedbackloop@coxfbl.senderscore.net/',
             '/feedbackloop@localwebfbl.senderscore.net/',
@@ -38,7 +44,13 @@ return [
             //
         ],
         // The aliases covert the body_map address into a more friendly source name
-        'aliases'       => [
+	'aliases'       => [
+            '/feedbackloop@feedback.bluetie.com/' 		=> 'BlueTie',
+            '/feedbackloop@fbl.cox.net/'			=> 'COX',
+            '/feedbackloop@fbl.apps.rackspace.com/'		=> 'Rackspace',
+            '/feedbackloop@fbl.synacor.com/'			=> 'Synacor',
+            '/feedbackloop@fbl.usa.net/'			=> 'USANET',
+
             '/feedbackloop@bluetiefbl.senderscore.net/'       => 'BlueTie',
             '/feedbackloop@coxfbl.senderscore.net/'           => 'COX',
             '/feedbackloop@localwebfbl.senderscore.net/'      => 'LocaWeb',
